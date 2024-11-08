@@ -1,0 +1,58 @@
+/* Wrapper for the logo section */
+.logos-wrapper {
+    overflow: hidden;
+    padding: 30px 80px;
+    background: white;
+    white-space: nowrap;
+    position: relative;
+  }
+
+  .logos-wrapper:before,
+  .logos-wrapper:after {
+    position: absolute;
+    top: 0;
+    width: 300px;
+    height: 100%;
+    content: "";
+    z-index:2;
+  }
+  
+  .logos-wrapper:before {
+    left: 0;
+    background: linear-gradient(to left, rgba(255, 255, 255, 0),white, white);
+  }
+  
+  .logos-wrapper:after {
+    right: 0;
+    background: linear-gradient(to right, rgba(255, 255, 255, 0), white, white);
+  }
+  
+  /* Pausing animation on hover */
+  .logos-wrapper:hover .logos-slide {
+    animation-play-state:paused;
+  }
+  
+
+  .logos-slide {
+    display: inline-block;
+    animation: 60s slide infinite linear;
+    
+  }
+  
+
+  .logos-slide img {
+    height: 85px;
+    margin: 0 15px;
+    
+  }
+  
+  
+  @keyframes slide {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-100%);
+    }
+  }
+  
